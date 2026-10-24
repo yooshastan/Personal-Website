@@ -1,282 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>JonLukassen</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">* {
-  box-sizing: border-box;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Header/logo Title */
-.header {
-  padding: 80px;
-  background-image: url("pics/topper.jpg");
-  background-color: #cccccc;
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  text-align: center;
-}
-
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-  
-  color: white;
-}
-
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jon Lukassen — Site Reliability Engineer</title>
+<meta name="description" content="Jon Lukassen — Site Reliability Engineer / DevOps. Infrastructure automation, monitoring, and industrial computer vision projects.">
+<meta property="og:title" content="Jon Lukassen — Site Reliability Engineer">
+<meta property="og:description" content="Infrastructure automation, monitoring, and industrial computer vision.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jonlukassen.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14181d;
+    --panel:#1b2129;
+    --panel-edge:#2a323d;
+    --ink:#e9e5da;
+    --ink-dim:#9aa5b1;
+    --steel:#7c8a99;
+    --amber:#e8a33d;
+    --amber-dim:rgba(232,163,61,.14);
+    --ok:#5cb878;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --sans:'IBM Plex Sans',system-ui,sans-serif;
+    --display:'Archivo',system-ui,sans-serif;
   }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
   }
-}
-	
-/* New featured projects panel; isolated from the original resume layout. */
-.featured-work{background:#10151c;color:#f6f4ee;padding:62px 22px 68px;font-family:Arial,Helvetica,sans-serif}
-.featured-work-inner{max-width:1100px;margin:0 auto}
-.featured-eyebrow{color:#edaa6b;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
-.featured-heading{font-size:clamp(30px,4vw,46px);line-height:1.12;margin:12px 0 12px}
-.featured-intro{font-size:16px;color:#bcc3cc;line-height:1.65;max-width:750px;margin:0 0 27px}
-.featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.featured-card{background:#1d242d;border:1px solid #39414b;border-radius:10px;padding:25px 21px;display:flex;flex-direction:column;min-height:250px;transition:transform .2s,border-color .2s}
-.featured-card:hover{transform:translateY(-3px);border-color:#edaa6b}
-.featured-kicker{font-size:11px;color:#efb07e;text-transform:uppercase;font-weight:bold;letter-spacing:1.2px}
-.featured-card h3{font-size:23px;margin:18px 0 11px;line-height:1.2}
-.featured-card p{font-size:14px;line-height:1.6;color:#bfc5cd;margin:0 0 20px;flex:1}
-.featured-link{font-size:14px;font-weight:bold;color:#f5bf91;text-decoration:underline;text-underline-offset:4px}
-.featured-link:hover{color:white}
-@media(max-width:850px){.featured-grid{grid-template-columns:1fr}.featured-card{min-height:190px}.featured-work{padding:46px 20px}}
+  a{color:var(--amber);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
 
+  /* ---------- top status bar ---------- */
+  .statusbar{
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border-bottom:1px solid var(--panel-edge);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 24px;color:var(--ink-dim);
+    position:sticky;top:0;background:rgba(20,24,29,.92);backdrop-filter:blur(6px);z-index:10;
+  }
+  .statusbar .sys{display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px rgba(92,184,120,.7)}
+  @media (prefers-reduced-motion: no-preference){
+    .dot{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  }
+  .statusbar nav{display:flex;gap:20px}
+  .statusbar nav a{color:var(--ink-dim)}
+  .statusbar nav a:hover{color:var(--amber);text-decoration:none}
 
-/* Historic Android system integration work (distinct from original apps). */
-.technical-work{margin-top:28px;padding:24px 26px;border:1px solid #404954;border-radius:10px;background:#171e26}
-.technical-kicker{display:block;font-size:11px;letter-spacing:1.5px;font-weight:bold;text-transform:uppercase;color:#efb07e}
-.technical-work h3{font-size:22px;margin:10px 0 9px;color:#f6f4ee}
-.technical-work p{font-size:14px;line-height:1.7;color:#c1c8d0;margin:0 0 12px}
-.technical-work .technical-credit{color:#aeb8c2;font-size:12px}
-.technical-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:15px}
-.technical-links a{font-size:13px;color:#f5bf91;font-weight:bold;text-decoration:underline;text-underline-offset:4px}
-.technical-links a:hover{color:#fff}
-@media(max-width:550px){.technical-work{padding:20px 18px}}
+  /* ---------- hero / annunciator panel ---------- */
+  header.hero{padding:88px 0 64px}
+  .eyebrow{
+    font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(44px,7.5vw,76px);
+    line-height:1.02;letter-spacing:-.02em;
+    margin-bottom:20px;
+  }
+  .hero p.lede{max-width:56ch;color:var(--ink-dim);font-size:19px;margin-bottom:40px}
+  .hero p.lede strong{color:var(--ink);font-weight:600}
 
+  .annunciator{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--panel-edge);border:1px solid var(--panel-edge);border-radius:8px;overflow:hidden;
+  }
+  .annunciator .cell{background:var(--panel);padding:16px 18px}
+  .cell .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:6px}
+  .cell .v{font-family:var(--mono);font-size:14px;color:var(--ink)}
+  .cell .v .ok{color:var(--ok)}
+  @media(max-width:640px){.annunciator{grid-template-columns:1fr 1fr}.annunciator .cell:last-child{grid-column:1/-1}}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0;border-top:1px solid var(--panel-edge)}
+  h2{
+    font-family:var(--display);font-weight:700;font-size:15px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--steel);
+    margin-bottom:36px;display:flex;align-items:center;gap:14px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--panel-edge)}
+
+  /* ---------- projects ---------- */
+  .projects{display:grid;gap:20px}
+  .project{
+    background:var(--panel);border:1px solid var(--panel-edge);border-radius:10px;
+    padding:28px;transition:border-color .2s ease;
+  }
+  .project:hover{border-color:var(--amber)}
+  .project .tag{
+    display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--amber);background:var(--amber-dim);border-radius:4px;padding:3px 8px;margin-bottom:14px;
+  }
+  .project h3{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.01em;margin-bottom:10px}
+  .project p{color:var(--ink-dim);margin-bottom:14px;max-width:64ch}
+  .project .stack{font-family:var(--mono);font-size:12px;color:var(--steel)}
+  .project .links{margin-top:14px;font-family:var(--mono);font-size:13px;display:flex;gap:18px}
+
+  /* ---------- experience timeline ---------- */
+  .job{
+    display:grid;grid-template-columns:170px 1fr;gap:28px;
+    padding:26px 0;border-bottom:1px solid var(--panel-edge);
+  }
+  .job:last-child{border-bottom:none}
+  .job .when{font-family:var(--mono);font-size:13px;color:var(--steel);padding-top:4px}
+  .job h3{font-family:var(--display);font-weight:700;font-size:19px;margin-bottom:2px}
+  .job .org{font-family:var(--mono);font-size:13px;color:var(--amber);margin-bottom:10px}
+  .job ul{list-style:none;color:var(--ink-dim)}
+  .job li{padding-left:18px;position:relative;margin-bottom:6px}
+  .job li::before{content:"›";position:absolute;left:0;color:var(--steel)}
+  @media(max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
+
+  /* ---------- skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+  .skillgroup{background:var(--panel);border:1px solid var(--panel-edge);border-radius:10px;padding:22px}
+  .skillgroup .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .skillgroup ul{list-style:none;color:var(--ink-dim);font-size:15px}
+  .skillgroup li{margin-bottom:5px}
+
+  /* ---------- contact ---------- */
+  .contact{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{
+    font-family:var(--mono);font-size:14px;letter-spacing:.04em;
+    border:1px solid var(--amber);color:var(--amber);border-radius:6px;
+    padding:12px 22px;display:inline-block;transition:background .2s,color .2s;
+  }
+  .btn:hover{background:var(--amber);color:var(--bg);text-decoration:none}
+  .btn.ghost{border-color:var(--panel-edge);color:var(--ink-dim)}
+  .btn.ghost:hover{background:var(--panel);color:var(--ink)}
+
+  footer{
+    border-top:1px solid var(--panel-edge);
+    padding:28px 0 40px;font-family:var(--mono);font-size:12px;color:var(--steel);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  /* ---------- load-in ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .fade{opacity:0;transform:translateY(10px);animation:rise .6s ease forwards}
+    .fade.d1{animation-delay:.08s}.fade.d2{animation-delay:.16s}.fade.d3{animation-delay:.26s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
 </style>
 </head>
 <body>
-<div class="header">
-<h1>Jonathan Lukassen</h1>
-<a class="mail" href="mailto:jonlukassen@gmail.com">jonlukassen@gmail.com</a><br />
-<a class="tel" href="tel:8043496152">(804) 349-6152</a></div>
 
-<div class="navbar"><a href="/">Home</a><a href="#featured-work">Featured projects</a> <a href="https://www.linkedin.com/in/jonathan-lukassen-3a232396/">LinkedIn</a> <a href="https://github.com/JLukassen">GitHub</a> <a href="https://trailblazer.me/id/jlukassen">SalesForce</a><a class="right" href="files/JonathanLukassen.pdf">Resume</a></div>
+<div class="statusbar">
+  <div class="sys"><span class="dot" aria-hidden="true"></span>JONLUKASSEN.COM &nbsp;·&nbsp; ALL SYSTEMS OPERATIONAL</div>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
 
+<div class="wrap">
 
-<section id="featured-work" class="featured-work" aria-labelledby="featured-work-title">
-  <div class="featured-work-inner">
-    <div class="featured-eyebrow">Independent development · Featured work</div>
-    <h2 id="featured-work-title" class="featured-heading">Software, sites & things I've built.</h2>
-    <p class="featured-intro">Projects spanning Android audio engineering, independent software experiments and a bit of K-pop internet culture. Find the apps, repositories and creative work here.</p>
-    <div class="featured-grid">
-      <article class="featured-card">
-        <div class="featured-kicker">01 / Independent studio · In preparation</div>
-        <h3>Yoo Shastan Development</h3>
-        <p>Independent software development, Android applications and experimental projects under a dedicated studio identity.</p>
-        <a class="featured-link" href="https://yooshastan.com/" target="_blank" rel="noopener noreferrer">Explore Yoo Shastan ↗</a>
-      </article>
-      <article class="featured-card">
-        <div class="featured-kicker">02 / Android · Beta 6 available</div>
-        <h3>Moka Music Player</h3>
-        <p>A high-fidelity Android audio player featuring advanced DSP, lossless playback and optional Navidrome/Subsonic streaming.</p>
-        <a class="featured-link" href="https://github.com/JLukassen/MokaMusicPlayer/releases/tag/v4.0.0-beta06" target="_blank" rel="noopener noreferrer">View project & download beta ↗</a>
-      </article>
-      <article class="featured-card">
-        <div class="featured-kicker">03 / Web · Live</div>
-        <h3>KPOPALYPSE NOW</h3>
-        <p>A colorful, unconventional K-pop-themed website and an ongoing experiment in front-end creativity.</p>
-        <a class="featured-link" href="https://kpopalypsenow.com/" target="_blank" rel="noopener noreferrer">Visit KPOPALYPSE NOW ↗</a>
-      </article>
-    </div>
+<header class="hero">
+  <p class="eyebrow fade">Industrial Automation · Computer Vision · Infrastructure</p>
+  <h1 class="fade d1">Jon Lukassen</h1>
+  <p class="lede fade d2">I build software that runs machines. <strong>Programmer at Amerapex</strong> developing computer-vision and Arduino motion-control systems for heat-exchanger cleaning — backed by years of <strong>sysadmin and cloud infrastructure</strong> experience keeping systems boring, in the good way.</p>
+  <div class="annunciator fade d3" role="list">
+    <div class="cell" role="listitem"><div class="k">Status</div><div class="v"><span class="ok">●</span> Open to opportunities</div></div>
+    <div class="cell" role="listitem"><div class="k">Current role</div><div class="v">Hydroblast Programmer · Amerapex</div></div>
+    <div class="cell" role="listitem"><div class="k">Base</div><div class="v">Houston, TX</div></div>
+  </div>
+</header>
 
-    <section class="technical-work" aria-labelledby="technical-work-heading">
-      <span class="technical-kicker">Technical Experiments &amp; Adaptations / Legacy project</span>
-      <h3 id="technical-work-heading">Tinymix Utility — APatch compatibility adaptation</h3>
-      <p>Adapted an existing Magisk Tinymix installer module for the APatch root framework, experimenting with Android audio mixer access, module packaging, file permissions and startup scripts. Tested on a Pixel 8a running stock Android 15. This is an earlier learning project, not an original audio application or a currently maintained release.</p>
-      <p class="technical-credit"><strong>Attribution:</strong> Based on Dinodva's Tinymix Manager installer module. The Tinymix utility is third-party software; the separate Tinymix Manager GUI is credited in the project documentation to 4pda developers rlh and LVware.</p>
-      <div class="technical-links">
-        <a href="https://github.com/JLukassen/install_tinymix_utility" target="_blank" rel="noopener noreferrer">View my adaptation ↗</a>
-        <a href="https://github.com/Dinodva/Tinymix-Manager-Installer-Magisk-Module" target="_blank" rel="noopener noreferrer">Original installer ↗</a>
-        <a href="https://github.com/Dinodva/Tinymix-Manager-Apk" target="_blank" rel="noopener noreferrer">Tinymix Manager APK ↗</a>
-      </div>
-    </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <article class="project">
+      <span class="tag">Computer Vision</span>
+      <h3>tube-counter</h3>
+      <p>A Python application that counts heat-exchanger tubes from field photos and generates machine recipes automatically. Detects tube openings with OpenCV, achieves ~95% recall across an archive of human-verified jobs, and flags low-confidence results so technicians can correct them in the loop.</p>
+      <div class="stack">Python · OpenCV · Flask · GitHub Actions CI</div>
+      <div class="links"><a href="https://github.com/yooshastan">→ GitHub</a></div>
+    </article>
+
+    <article class="project">
+      <span class="tag">Hardware Automation</span>
+      <h3>Automated tube-cleaning machine</h3>
+      <p>Arduino-based control system for an automated heat-exchanger tube-cleaning rig. Executes recipes generated by tube-counter, with serial logging and diagnostics for troubleshooting runs in the field.</p>
+      <div class="stack">Arduino · C++ · Serial diagnostics · Python tooling</div>
+    </article>
+
+    <article class="project">
+      <span class="tag">Infrastructure</span>
+      <h3>Remote tooling server</h3>
+      <p>Self-hosted Flask services on Windows with reliable boot-time startup, reachable from anywhere over a Tailscale mesh VPN — no ports exposed to the public internet.</p>
+      <div class="stack">Flask · Windows services · Tailscale</div>
+    </article>
+
+    <article class="project">
+      <span class="tag">Android Applications</span>
+      <h3>Yoo Shastan</h3>
+      <p>Independent Android app studio featuring Moka Music Player and future releases, with an emphasis on high-quality audio, customization, and thoughtful mobile experiences.</p>
+      <div class="stack">Android · Kotlin · Media3 · Audio / DSP</div>
+      <div class="links"><a href="https://yooshastan.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Yoo Shastan Android app studio">→ Visit yooshastan.com</a></div>
+    </article>
+
+    <article class="project">
+      <span class="tag">Android Audio Diagnostics · In Development</span>
+      <h3>Audio Path Inspector</h3>
+      <p>A read-only Android audio inspection tool for understanding reported routes, device capabilities, AudioFlinger/ALSA diagnostics, and vendor configuration. Built with optional Shizuku access, searchable hardware information, snapshot comparisons, and root-assisted Tinymix inventory; still an early source project, not a validated audio analyzer.</p>
+      <div class="stack">Kotlin · Jetpack Compose · Android Audio APIs · Shizuku · ALSA</div>
+      <div class="links"><a href="https://github.com/yooshastan/AudioPathInspector" target="_blank" rel="noopener noreferrer">→ Source on GitHub</a><a href="https://yooshastan.com/#projects" target="_blank" rel="noopener noreferrer">→ Studio projects</a></div>
+    </article>
+
+    <article class="project">
+      <span class="tag">Music &amp; Culture</span>
+      <h3>KPOPALYPSE NOW</h3>
+      <p>An independent home for K-pop commentary, fan culture, and creative writing, with a bold editorial identity.</p>
+      <div class="stack">K-pop · Writing · Web Design</div>
+      <div class="links"><a href="https://kpopalypsenow.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit KPOPALYPSE NOW">→ Visit kpopalypsenow.com</a></div>
+    </article>
+
   </div>
 </section>
 
-<div class="row">
-<div class="side">
-<h2>Education:</h2>
+<section id="experience">
+  <h2>Experience</h2>
 
-<h4>Web Development Development<br />
-East Coast Polytechnic University</h4>
+  <div class="job">
+    <div class="when">May 2026 — Present</div>
+    <div>
+      <h3>Hydroblast Programmer</h3>
+      <div class="org">Amerapex Services Group · Houston, TX</div>
+      <ul>
+        <li>Built a Python computer-vision application that detects and counts heat-exchanger tube openings, replacing manual counting</li>
+        <li>Programmed Arduino motion-control systems in C++ — safety logic, fault monitoring, automated sequences, and configurable tube-pattern recipes</li>
+        <li>Deployed Raspberry Pi edge devices with camera integration and secure remote access over a private Tailscale network</li>
+        <li>Managed source code and CI with Git and GitHub Actions across multiple machine configurations</li>
+      </ul>
+    </div>
+  </div>
 
-<img src="pics/ecpi_innsbrook.png" style="width: fit-content;">
-<p>February 2017 - July 2020</p>
-<h2>Projects:</h2>
+  <div class="job">
+    <div class="when">Jan 2026 — May 2026</div>
+    <div>
+      <h3>IT Support Technician</h3>
+      <div class="org">CL Support Services · Houston, TX</div>
+      <ul>
+        <li>Administered Windows, Apple, and Linux systems across corporate environments</li>
+        <li>Automated identity and access management across Active Directory and Microsoft 365, with device management via Intune</li>
+        <li>Built internal automation tooling in Python and PowerShell for asset tracking, auditing, and user management</li>
+      </ul>
+    </div>
+  </div>
 
-<h4>Drones</h4>
-<img src="pics/ecpiArticle.jpg" style="height:120px; " />
-<p>&bull; Featured in an ECPI <a href="https://econnect.ecpi.edu/2018/10/hands-on-experience-benefits/">web article</a><br />
-&bull; Cofounded Innsbrook campus Drone Club<br />
-&bull; Developed API used by the Campus at events</p>
-&nbsp;
+  <div class="job">
+    <div class="when">Jul 2023 — Jul 2025</div>
+    <div>
+      <h3>System Administrator</h3>
+      <div class="org">The Reynolds and Reynolds Company · Houston, TX</div>
+      <ul>
+        <li>Directed environment deployments, technology refreshes, and system decommissions</li>
+        <li>Automated administration and monitoring with Bash, PowerShell, Ansible, and Python</li>
+        <li>Resolved escalated issues across hosted infrastructure, network products, and databases</li>
+        <li>Ran vulnerability assessments with Tenable, Sophos, and Carbon Black, and implemented remediations</li>
+      </ul>
+    </div>
+  </div>
 
-<h4>Trailhead SalesForce</h4>
-<img src="pics/salesforce.png" style="height:120px; " />
-<p>&bull; Earned 26 badges towards <a href="https://trailblazer.me/id/jlukassen">Salesforce</a> Platform Developer I credential<br />
-&bull; Created development Orgs to build, test and deplpy Lightning Web Components and controls based on description  <br />
-&bull; Connected VSCOde to Org and committed features to Github </p>
+  <div class="job">
+    <div class="when">Nov 2020 — Apr 2022</div>
+    <div>
+      <h3>Cloud Support Engineer</h3>
+      <div class="org">Alvaria, Inc. · Brentwood, TN</div>
+      <ul>
+        <li>Supported cloud-hosted solutions in AWS and Azure, including S3, EC2, and Linux environments</li>
+        <li>Monitored systems and networks with Datadog and Sumo Logic, resolving critical issues</li>
+        <li>Debugged applications and hardware across Linux and Windows, maintaining high availability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Jun 2019 — Oct 2020</div>
+    <div>
+      <h3>Assistant Manager &amp; Web Developer</h3>
+      <div class="org">Mount Juliet Café · Mount Juliet, TN</div>
+      <ul>
+        <li>Built and supported the café's website and applications with WordPress, JavaScript, CSS, and HTML5</li>
+        <li>Managed daily operations, scheduling, and inventory alongside the store owner</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Nov 2018 — May 2019</div>
+    <div>
+      <h3>Software Developer</h3>
+      <div class="org">ECPI University</div>
+      <ul>
+        <li>Developed an interactive game with the Tello Drone API, VB, and Node.js</li>
+        <li>Technical lead and founding member of the Drone Club</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Oct 2017 — Oct 2018</div>
+    <div>
+      <h3>Internal Help Desk — Wells Fargo</h3>
+      <div class="org">Apex Systems · Richmond, VA</div>
+      <ul>
+        <li>Remote application, hardware, and network support for 300,000 users</li>
+        <li>97% first-call resolution — 7 points above team goal</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skillgroup">
+      <div class="k">Automation</div>
+      <ul><li>Python</li><li>Bash / PowerShell</li><li>Ansible</li><li>GitHub Actions</li></ul>
+    </div>
+    <div class="skillgroup">
+      <div class="k">Infrastructure</div>
+      <ul><li>Linux / Windows Server</li><li>ESXi / VMware</li><li>Tailscale / networking</li><li>SQL Server</li></ul>
+    </div>
+    <div class="skillgroup">
+      <div class="k">Observability &amp; Security</div>
+      <ul><li>Datadog / Sumo Logic</li><li>Tenable / Sophos</li><li>Carbon Black</li></ul>
+    </div>
+    <div class="skillgroup">
+      <div class="k">ML &amp; Vision</div>
+      <ul><li>OpenCV</li><li>YOLO / Edge Impulse</li><li>Arduino / embedded</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <a class="btn" href="mailto:jonlukassen@gmail.com">Email me</a>
+    <a class="btn ghost" href="https://github.com/yooshastan">GitHub</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-lukassen-3a232396/">LinkedIn</a>
+    <a class="btn ghost" href="/files/JonathanLukassen.pdf">Résumé (PDF)</a>
+  </div>
+</section>
+
 </div>
 
-<div class="main">
-<h2>Experience:</h2> <br>
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:0 24px;width:100%;max-width:920px;margin:0 auto">
+    <span>© 2026 Jon Lukassen</span>
+    <span>STATIC · NO SERVER · TLS BY HOST</span>
+  </div>
+</footer>
 
-<img src="pics/alvaria.png" style="height:200px;" />
-<h3>Cloud Support Engineer</h3>
-<p>November 2020-April 2022</p>
-<p>&bull; Managed Linux and WIndows server infrastructure for hosted and premise clients, including regular maintenance and responding to system alerts <br />
-&bull; Wrote bash scripts to automate tasks used for system checks and maintenance <br />
-&bull; Utilized Datadog, Sumo, and proprietary tools to gather logs and data in order to gather information troubleshooting applications and infrastructure errors <br />
-&bull; Provided remote customer support for VIA cloud, Hosted, and UIP services and infrastructure.
-Including front end, customer facing issues, and back end changes using SQL Server <br />
-&bull; Coordinated with T2 for education and support. Restructure separated the team; I started a
-biweekly case review for new hires with T2. This is now being used for all new VIA hires <br />
-&bull; Documented and report troubleshooting findings to Research and Development Team using JIRA
-as well as publishing the process in Knowledge Base </p>
-<br />
-
-
-<img src="pics/logo_1.jpg" style="height:200px;" />
-<h3>Assistant Manager</h3>
-<p>June 2019 - October 2020</p>
-<p>&bull; Developed and supported <a href="https://mountjulietcafe.com">mountjulietcafe.com</a> and related applications with JavaScript, CSS, and HTML5<br />
-&bull; Collaborate with Store Owner to optimize customer promotional reach using social media and web user metadata <br />
-&bull; Diagnosed and resolved issues with website, server, and third-party integrations </p>
-<br />
-
-
-<img src="pics/ECPI-Seal.png" style="height:200px;" />
-<h3>ECPI - Work Study</h3>
-<p>Software Developer</p>
-<p>November 2018 - May 2019</p>
-<p>&bull; Developed an interactive game using a Tello Drone API, VB and Excel Developer Tools<br />
-&bull; Tested and debugged features each week for perspective student demonstrations<br />
-&bull; Attended weekly meetings as technical lead and founding member of the Drone Club</p>
-<br />
-
-<img src="pics/WellsFargo.jpg" style="height:120px;" />
-<h3>Wells Fargo - Application Support</h3>
-<p>October 2017 - October 2018</p>
-<p>App/Hardware SVT - Corp/Lending</p>
-<p>&bull; Provided remote application, hardware, and network support for 300,000 users<br />
-&bull; Achieved 97% in first call resolution, 7% above team goal<br />
-&bull; Educated users on date security protocols, and procedures</p>
-<br/>
-
-</div>
-</div>
-
-<div class="footer">
-<h2>Email</h2>
-<a class="mail" href="mailto:jonlukassen@gmail.com">jonlukassen@gmail.com</a>
-
-<h2>Phone</h2>
-<a class="tel" href="tel:8043496152">(804) 349-6152</a>
-
-<h2>Location</h2>
-
-<p>Houston TX, 77006</p>
-</div>
 </body>
 </html>
